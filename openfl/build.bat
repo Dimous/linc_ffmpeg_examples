@@ -1,0 +1,2 @@
+openfl test windows -static -final -release -dce full -D no-debug -D no-traces -D nocppiaast -D analyzer-optimize
+::-D HXCPP_M64 -D HXCPP_CPP11 -D HXCPP_GC_MOVING -D HXCPP_OPTIMIZE_LINK -D HXCPP_GC_BIG_BLOCKS -D HXCPP_GC_DYNAMIC_SIZE -D NO_PRECOMPILED_HEADERS -D HXCPP_OPTIMIZE_FOR_SIZE
