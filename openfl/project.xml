@@ -17,5 +17,5 @@
         
     <icon path="assets/openfl.svg" />
 
-    <assets path="assets" include="*" />
+    <!--assets path="assets" include="*" /--><!-- you have to copy assets manually, for some reason this setting breaks the resulting application -->
 </project>
