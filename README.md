@@ -13,4 +13,4 @@ Even though this demo compiled in static mode you still need to copy dlls from `
 
 ## To do
 
-* workaround for bitmap drawing issue
+* workaround for bitmap drawing issue (WIP [will encode frames to PNGs and use BitmapData.fromBytes to read them])
