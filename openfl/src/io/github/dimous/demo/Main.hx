@@ -22,17 +22,15 @@ class Main extends Sprite {
 
 		LogTransmitter.onMessage = LogAppender.accept;		
 
-		final mediaio = new MediaIO(), timer = new Timer(1000 / 60), bitmapdata = new BitmapData(196, 312, true, 0x00000000), bitmap = new Bitmap(bitmapdata), format = mediaio.listInputFormats().filter(format -> DSHOW == format.getName()).pop();
+		final mediaio = new MediaIO(), timer = new Timer(1000 / 60), bitmap = new Bitmap(), format = mediaio.listInputFormats().filter(format -> DSHOW == format.getName()).pop();
 
 		bitmap.x = 50;
 		bitmap.y = 50;
 
 		this.addChild(bitmap);
 
-		mediaio.onBeforePixelData = bitmapdata.lock;
-		mediaio.onPixelData = bitmapdata.setPixel32;
-		mediaio.onAfterPixelData = bitmapdata.unlock.bind(null);
 		mediaio.onStreamEnd = function () trace("stream ended", timer.currentCount);
+		mediaio.onBitmapData = function (bitmapdata) bitmap.bitmapData = bitmapdata;
 
 		timer.addEventListener(TimerEvent.TIMER, function (_) mediaio.read());
 
@@ -45,7 +43,7 @@ class Main extends Sprite {
 		// timer.delay = 1000 / mediaio.getFrameRate();
 
 		// test 3
-		// mediaio.open(0, 0, null, null, "./assets/sound/sample.mp3");
+		// mediaio.open(196, 312, null, null, "./assets/sound/sample.mp3");
 		// timer.delay = 1000 / mediaio.getFrameRate(AUDIO);
 
 		timer.start();
