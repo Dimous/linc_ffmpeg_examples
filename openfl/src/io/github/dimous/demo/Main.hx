@@ -34,18 +34,20 @@ class Main extends Sprite {
 
 		timer.addEventListener(TimerEvent.TIMER, function (_) mediaio.read());
 
-		// test 1
-		mediaio.open(196, 312, null, null, "./assets/video/sample.webm"/* you can even pass url here, for example -- http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4 */);
-		timer.delay = 1000 / mediaio.getFrameRate();
+		try {
+			// test 1
+			mediaio.open(196, 312, null, null, "./assets/video/sample.webm"/* you can even pass url here, for example -- http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4 */);
+			timer.delay = 1000 / mediaio.getFrameRate();
 
-		// test 2: stream webcam output (DSHOW/VFWCAP on Windows, AVFOUNDATION on iOS, VIDEO4LINUX2 on Linux, ANDROID_CAMERA on Android)
-		// mediaio.open(196, 312, null, format, "video=" + mediaio.listInputDevices(format).pop().getId());
-		// timer.delay = 1000 / mediaio.getFrameRate();
+			// test 2: stream webcam output (DSHOW/VFWCAP on Windows, AVFOUNDATION on iOS, VIDEO4LINUX2 on Linux, ANDROID_CAMERA on Android)
+			// mediaio.open(640, 480, null, format, "video=" + mediaio.listInputDevices(format).pop().getId());
+			// timer.delay = 1000 / mediaio.getFrameRate();
 
-		// test 3
-		// mediaio.open(196, 312, null, null, "./assets/sound/sample.mp3");
-		// timer.delay = 1000 / mediaio.getFrameRate(AUDIO);
+			// test 3
+			// mediaio.open(1, 1, null, null, "./assets/sound/sample.mp3");
+			// timer.delay = 1000 / mediaio.getFrameRate(AUDIO);
 
-		timer.start();
+			timer.start();
+		} catch (exception: IOException) mediaio.close();
 	}
 }
