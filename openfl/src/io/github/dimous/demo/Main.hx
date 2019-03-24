@@ -36,7 +36,7 @@ class Main extends Sprite {
 
 		try {
 			// test 1
-			mediaio.open(196, 312, null, null, "./assets/video/sample.webm"/* you can even pass url here, for example -- http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4 */);
+			mediaio.open(0, 0, null, null, "./assets/video/sample.webm"/* you can even pass url here, for example -- http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4 */);
 			timer.delay = 1000 / mediaio.getFrameRate();
 
 			// test 2: stream webcam output (DSHOW/VFWCAP on Windows, AVFOUNDATION on iOS, VIDEO4LINUX2 on Linux, ANDROID_CAMERA on Android)
@@ -44,7 +44,7 @@ class Main extends Sprite {
 			// timer.delay = 1000 / mediaio.getFrameRate();
 
 			// test 3
-			// mediaio.open(1, 1, null, null, "./assets/sound/sample.mp3");
+			// mediaio.open(0, 0, null, null, "./assets/sound/sample.mp3");
 			// timer.delay = 1000 / mediaio.getFrameRate(AUDIO);
 
 			timer.start();
