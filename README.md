@@ -11,5 +11,4 @@ Even though this demo compiled in static mode you still need to copy dlls from `
 
 ## To do
 
-* add seeking
 * test on other platforms

@@ -45,6 +45,7 @@ class Main extends Sprite {
 
 			// test 3
 			// mediaio.open(0, 0, null, null, "./assets/sound/sample.mp3");
+			// mediaio.seek(53, AUDIO);
 			// timer.delay = 1000 / mediaio.getFrameRate(AUDIO);
 
 			timer.start();
